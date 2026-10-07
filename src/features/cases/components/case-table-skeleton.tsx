@@ -1,0 +1,5 @@
+import { Skeleton } from "@/components/ui/display";
+
+export function CaseTableSkeleton() {
+  return <div className="queue-skeleton" aria-label="Loading case queue" role="status"><span className="sr-only">Loading case queue</span><div className="skeleton-table-view"><div className="skeleton-table-head">{Array.from({ length: 6 }, (_, index) => <Skeleton key={index} className="skeleton-label" />)}</div>{Array.from({ length: 7 }, (_, index) => <div className="skeleton-table-row" key={index}><Skeleton className="skeleton-case" /><Skeleton className="skeleton-customer" /><Skeleton className="skeleton-pill" /><Skeleton className="skeleton-pill skeleton-priority" /><Skeleton className="skeleton-assignee" /><Skeleton className="skeleton-date" /></div>)}</div><div className="skeleton-mobile-view">{Array.from({ length: 5 }, (_, index) => <div className="skeleton-mobile-card" key={index}><div><Skeleton className="skeleton-date" /><Skeleton className="skeleton-pill" /></div><Skeleton className="skeleton-case" /><Skeleton className="skeleton-customer" /><Skeleton className="skeleton-pill" /></div>)}</div></div>;
+}
